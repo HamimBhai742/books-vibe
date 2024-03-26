@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import { saveReadBooks } from "../../../../Utility/SaveReadBook";
+import { saveWishlistBooks } from "../../../../Utility/Wishlist";
 
 const Bookdetlais = () => {
 
@@ -19,7 +20,7 @@ const Bookdetlais = () => {
     }
 
     const handleWishListBtn=()=>{
-        saveReadBooks(findBook.bookId)
+        saveWishlistBooks(findBook.bookId)
         toast('Wish List Add Successful')
     }
 

@@ -1,12 +1,14 @@
 
-const ReadBookPage = ({ readBook }) => {
-    const { image, bookName, author, tags, yearOfPublishing, publisher, totalPages, rating, category } = readBook
+
+const WishlistSave = ({wis}) => {
+    console.log(wis);
+    const {totalPages,publisher,yearOfPublishing,tags,author,bookName,image,rating,category}=wis
     return (
         <div>
             <div className='mt-6'>
                 <div className="card lg:card-side border-2 border-[#13131326]">
                     <div className="p-5 rounded-2xl">
-                        <figure className="bg-[#F3F3F3] px-8 py-5 rounded-2xl"><img className="h-[220px] w-[220px]" src={image} alt="Shoes" /></figure>
+                        <figure className="bg-[#F3F3F3] px-8 py-5 rounded-2xl"><img className="h-[200px] w-full" src={image} alt="Shoes" /></figure>
                     </div>
                     <div className="card-body font-work-sans space-y-2">
                         <h2 className="card-title font-Playfai text-2xl font-bold">{bookName}</h2>
@@ -50,4 +52,4 @@ const ReadBookPage = ({ readBook }) => {
     );
 };
 
-export default ReadBookPage;
+export default WishlistSave;

@@ -20,8 +20,8 @@ const ReadPage = () => {
                 }
             }
             setReadBooks(saveReadBooks)
-            console.log(readBooks);
-            console.log(saveReadBooks);
+            // console.log(readBooks);
+            // console.log(saveReadBooks);
 
         }
     }, [])

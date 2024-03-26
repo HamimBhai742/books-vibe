@@ -1,6 +1,5 @@
 const getWishlistBooks = () => {
     const storedBooks = localStorage.getItem('wishlist-books')
-
     if (storedBooks) {
         return JSON.parse(storedBooks)
     }
