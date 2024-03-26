@@ -10,7 +10,7 @@ const ListedBook = () => {
 
                 <div className="mt-5">
                 <ul className="flex gap-4 text-[#13131380] font-work-sans text-lg">
-                    <li><NavLink to={'readPage'} className='border-2 border-[#1313134D] border-b-white py-1 bg-white text-[#131313CC] px-4'>Read Books</NavLink></li>
+                    <li><NavLink to={'readPage'} >Read Books</NavLink></li>
                     <li><NavLink to={'wishlistBooksPage'}>Wishlist Books</NavLink></li>
                 </ul>
                 <div className="border-t-2 border-[#1313134D]"></div>

@@ -21,15 +21,15 @@ const Nav = () => {
                         <a className="btn btn-ghost text-3xl font-bold">Book Vibe</a>
                     </div>
                     <div className="navbar-center hidden lg:flex">
-                        <ul className="menu menu-horizontal px-1 flex items-center text-[#131313CC]">
-                            <li className="border-2 border-[#23BE0A] text-[#23BE0A] text-lg font-semibold rounded-xl"><NavLink to={'/'}>Home</NavLink></li>
-                            <li><NavLink to={'/listedBook'}>Listed Books</NavLink></li>
-                            <li><NavLink to={'/pageToRead'}>Pages to Read</NavLink></li>
+                        <ul id="navBar" className="menu font-work-sans menu-horizontal px-1 flex items-center text-[#131313CC] gap-5 text-lg">
+                            <NavLink to={'/'}>Home</NavLink>
+                            <NavLink to={'/listedBook'}>Listed Books</NavLink>
+                            <NavLink to={'/pageToRead'}>Pages to Read</NavLink>
                         </ul>
                     </div>
                     <div className="navbar-end text-lg  font-semibold flex gap-3">
-                        <a className="btn bg-[#23BE0A] text-white">Sign In</a>
-                        <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
+                        <button className="btn bg-[#23BE0A] text-white">Sign In</button>
+                        <button className="btn bg-[#59C6D2] text-white">Sign Up</button>
                     </div>
                 </div>
             </div>
