@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+}
+
+/* font work sans  */
+
+.font-work-sans{
+    font-family: "Work Sans", sans-serif;
+}
+
+.font-Playfai{
+    font-family: "Playfair Display", serif;
+}
