@@ -1,7 +1,28 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Outlet, useLoaderData } from 'react-router-dom';
+import { getReadBooks } from '../../../Utility/SaveReadBook';
 
 const ReadPage = () => {
+
+    const Books = useLoaderData()
+
+    useEffect(() => {
+        const storedBooksId = getReadBooks()
+
+        if (Books.length > 0) {
+
+            const saveReadBooks = []
+            for (const id of storedBooksId) {
+                const readBook = Books.find(book => book.bookId === id)
+                if (readBook) {
+                    saveReadBooks.push(readBook)
+                }
+            }
+
+            console.log(Books,saveReadBooks,storedBooksId);
+
+        }
+    }, [])
     return (
         <div>
             <div className='mt-6'>

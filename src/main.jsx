@@ -38,6 +38,7 @@ const router = createBrowserRouter([
           {
             // path: 'readPage',
             index: true,
+            loader: () => fetch('/public/Books.json'),
             element: <ReadPage></ReadPage>
           },
           {
