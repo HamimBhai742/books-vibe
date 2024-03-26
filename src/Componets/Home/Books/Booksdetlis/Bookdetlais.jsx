@@ -18,6 +18,11 @@ const Bookdetlais = () => {
         toast('Read Book Add Successful')
     }
 
+    const handleWishListBtn=()=>{
+        saveReadBooks(findBook.bookId)
+        toast('Wish List Add Successful')
+    }
+
     return (
         <div className="max-w-[1170px] mx-auto my-10">
             <div className="flex gap-5">
@@ -56,7 +61,7 @@ const Bookdetlais = () => {
 
                     <div className="font-semibold text-lg font-work-sans flex gap-16 mt-5">
                         <button onClick={handleReadBtn} className="border-[1px] border-[#1313134D] px-7 h-12 text-[#131313] rounded-xl">Read</button>
-                        <button className="bg-[#50B1C9] text-white px-7 rounded-xl h-12">Wishlist</button>
+                        <button onClick={handleWishListBtn} className="bg-[#50B1C9] text-white px-7 rounded-xl h-12">Wishlist</button>
                     </div>
                 </div>
             </div>
