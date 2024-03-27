@@ -7,9 +7,10 @@ import { getReadBooks } from '../../../Utility/SaveReadBook';
 const WishlistBooks = () => {
 
     const wishlist = useLoaderData()
-
+    const [readBooks, setReadBooks] = useState([])
     const [wishlists, setWishlists] = useState([])
 
+    const Books = useLoaderData()
     useEffect(() => {
         const storedWishlistId = getWishlistBooks()
         const saveWishist = []
@@ -22,12 +23,10 @@ const WishlistBooks = () => {
                 }
             }
             setWishlists(saveWishist)
-            console.log(wishlist, saveWishist, storedWishlistId);
+            console.log(saveWishist, storedWishlistId);
         }
     }, [])
 
-    // const [readBooks, setReadBooks] = useState([])
-    const Books = useLoaderData()
     useEffect(() => {
         const storedBooksId = getReadBooks()
         if (Books.length > 0) {
@@ -39,19 +38,28 @@ const WishlistBooks = () => {
                     saveReadBooks.push(readBook)
                 }
             }
-            setWishlists(saveReadBooks)
-            // console.log(readBooks);
-            // console.log(saveReadBooks);
+            setReadBooks(saveReadBooks)
+            console.log(readBooks);
+            console.log(saveReadBooks);
 
         }
     }, [])
 
+    // const [readBooks, setReadBooks] = useState([])
+    readBooks.map(mr => console.log(mr))
+
     return (
         <div>
-            {
-                wishlists.map((wis, idx) => <WishlistSave key={idx} wis={wis}></WishlistSave>)
-            }
-
+            <div>
+                {
+                    wishlists.map((wis, idx) => <WishlistSave key={idx} wis={wis}></WishlistSave>)
+                }
+            </div>
+            {/* <div>
+                {
+                    readBooks.map((read, idx) => <WishlistSave read={read} key={idx}></WishlistSave>)
+                }
+            </div> */}
         </div>
     );
 };

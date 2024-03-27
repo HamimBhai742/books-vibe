@@ -28,7 +28,7 @@ const ReadPage = () => {
     return (
         <div>
             {
-                readBooks.map(readBook=><ReadBookPage readBook={readBook}></ReadBookPage>)
+                readBooks.map((readBook,idx)=><ReadBookPage key={idx} readBook={readBook}></ReadBookPage>)
             }
         </div>
 
