@@ -26,6 +26,8 @@ const Nav = () => {
                             <NavLink to={'/'}>Home</NavLink>
                             <NavLink to={'/listedBook'}>Listed Books</NavLink>
                             <NavLink to={'/pageToRead'}>Pages to Read</NavLink>
+                            <NavLink to={'/writers'}>Writers</NavLink>
+                            <NavLink to={'/about'}>About</NavLink>
                         </ul>
                     </div>
                     <div className="navbar-end text-lg  font-semibold flex gap-3">

@@ -21,6 +21,8 @@ ul>li>.active {
     /* className='border-2 border-[#1313134D] border-b-white py-1 bg-white text-[#131313CC] px-4' */
     color: #131313CC;
     border: 2px solid #1313134D;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-bottom: white;
     background-color: white;
     padding: 5px 16px;

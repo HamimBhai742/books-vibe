@@ -18,6 +18,7 @@ import Nav from './Componets/Nav/Nav';
 import ReadPage from './Componets/Listed-Book/ReadPage/ReadPage';
 import WishlistBooks from './Componets/Listed-Book/whitlist/Whitlist';
 import Bookdetlais from './Componets/Home/Books/Booksdetlis/Bookdetlais';
+import Writers from './Componets/Writers/Writers';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,11 @@ const router = createBrowserRouter([
         path: '/book/:bookId',
         loader: () => fetch(`/Books.json`),
         element: <Bookdetlais></Bookdetlais>
+      },
+      {
+        path: '/writers',
+        loader: ()=>fetch('/Writers.json'),
+        element:<Writers></Writers>
       }
     ]
   },
