@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
 import { saveReadBooks } from "../../../../Utility/SaveReadBook";
 import { saveWishlistBooks } from "../../../../Utility/Wishlist";
+import { getReadBooks } from "../../../../Utility/SaveReadBook";
+import { getWishlistBooks } from "../../../../Utility/Wishlist";
 
 const Bookdetlais = () => {
 
@@ -15,13 +16,47 @@ const Bookdetlais = () => {
     const findBook = bookData.find(b => b.bookId === data.bookId)
 
     const handleReadBtn = () => {
-        saveReadBooks(findBook.bookId)
-        toast('Read Book Add Successful')
+
+
+        const storedBooksId = getReadBooks()
+        // console.log(storedBooksId);
+        // console.log(findBook.bookId);
+
+        const cheakBookItem = storedBooksId.find(id => id === findBook.bookId)
+        // console.log(cheakBookItem);
+        // console.log(cheakBookItem);
+        if (!cheakBookItem) {
+            toast.success('Read Book Added Successful')
+            saveReadBooks(findBook.bookId)
+        }
+        else {
+            toast.error('Already Added Read Book List')
+        }
+
+        // for (const id of storedBooksId) {
+        //     const cheakBookItem = storedBooksId.find(b => b.bookId === findBook.bookId)
+        //     console.log(cheakBookItem);
+
+        // }
     }
 
-    const handleWishListBtn=()=>{
-        saveWishlistBooks(findBook.bookId)
-        toast('Wish List Add Successful')
+    const handleWishListBtn = () => {
+        // saveWishlistBooks(findBook.bookId)
+        // toast('Wish List Add Successful')
+        const storedWishlistId = getWishlistBooks()
+        const storedBooksId = getReadBooks()
+        const chaekWishlist = storedWishlistId.find(id => id === findBook.bookId)
+        const cheakBookItem = storedBooksId.find(id => id === findBook.bookId)
+        if(!chaekWishlist && !cheakBookItem){        
+            toast.success('Wishlist Added Successful') 
+            saveWishlistBooks(findBook.bookId)
+        }
+        else if(cheakBookItem){
+            toast.error('Already Read This Book')
+        }
+        else{
+            toast.error('Already Added Wishlist') 
+        }
     }
 
     return (
