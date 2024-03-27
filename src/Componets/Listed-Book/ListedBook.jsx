@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import ReadPage from "./ReadPage/ReadPage";
-export   const AssetContext = createContext(null)
+export const AssetContext = createContext(null)
 
 const ListedBook = () => {
     const [selected, setSlected] = useState()
@@ -11,11 +11,11 @@ const ListedBook = () => {
         console.log(selected);
     }
 
-  
+
     return (
         <div>
             <div className="max-w-[1170px] mx-auto "  >
-                <h3 className="bg-[#1313130D] py-6 text-center text-[#131313] font-work-sans text-3xl font-bold rounded-2xl">Book</h3>
+                <div className="max-sm:p-3"> <h3 className="bg-[#1313130D] py-6 text-center text-[#131313] font-work-sans text-3xl font-bold rounded-2xl">Book</h3></div>
                 <div className="my-5 flex justify-center">
                     <select value={selected} onChange={handleBtn} className=" font-work-sans select border-none text-white select-bordered w-full max-w-[200px] font-semibold text-lg bg-[#23BE0A]">
                         <option disabled selected>Sort By</option>
@@ -25,7 +25,7 @@ const ListedBook = () => {
                     </select>
                 </div>
                 {/* <h3>{selected}</h3> */}
-                <div className="mt-5">
+                <div className="mt-5 max-sm:mt-16 max-sm:p-3">
                     <ul className="flex gap-4 text-[#13131380] font-work-sans text-lg">
                         <li><NavLink to={'readPage'} >Read Books</NavLink></li>
                         <li><NavLink to={'wishlistBooksPage'}>Wishlist Books</NavLink></li>

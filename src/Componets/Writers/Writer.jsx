@@ -6,7 +6,7 @@ const Writer = ({ writer }) => {
     console.log(Math.round(rating));
     return (
         <div>
-            <div className="flex font-work-sans flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
+            <div className="flex border-2 font-work-sans flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-50 dark:text-gray-800">
                 <div className="flex space-x-4">
                     <img alt="" src={image} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                     <div className="flex flex-col space-y-1">
@@ -15,7 +15,7 @@ const Writer = ({ writer }) => {
                     </div>
                 </div>
                 <div>
-                    <div className='bg-[#F3F3F3] rounded-3xl px-8 py-3'><img src={imageBook} alt="" className="h-[300px]" /></div>
+                    <div className='bg-[#F3F3F3] rounded-3xl px-8 py-3 flex justify-center'><img src={imageBook} alt="" className="lg:h-[300px] h-[150px]" /></div>
                     <div className='mt-3'>
                         <h2 className="mb-1 text-xl font-semibold">{bookName}</h2>
                         <p className="text-sm dark:text-gray-600">{review.slice(0, 119)}</p>

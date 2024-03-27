@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { useState, useEffect } from 'react';
 import { getReadBooks } from '../../Utility/SaveReadBook';
 
@@ -105,26 +105,28 @@ export default function PageToRead() {
     // console.log(dataBook);
     return (
         <div className='max-w-[1170px] mx-auto mt-5'>
-            <BarChart
-                width={1170}
-                height={400}
-                data={readBooks}
-                margin={{
-                    top: 20,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="bookName" />
-                <YAxis />
-                <Bar dataKey="yearOfPublishing" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-                    ))}
-                </Bar>
-            </BarChart>
+            <ResponsiveContainer width={`100%`} height={500}>
+                <BarChart
+                    width={1170}
+                    height={400}
+                    data={readBooks}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="bookName" />
+                    <YAxis />
+                    <Bar dataKey="yearOfPublishing" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+                        ))}
+                    </Bar>
+                </BarChart>
+            </ResponsiveContainer>
         </div>
     );
 }

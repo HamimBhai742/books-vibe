@@ -6,7 +6,7 @@ const Writers = () => {
     const writersData = useLoaderData()
     console.log(writersData);
     return (
-        <div className="grid grid-cols-3 max-w-[1170px] mx-auto gap-5">
+        <div className="grid  lg:grid-cols-3 max-w-[1170px] mx-auto gap-5 max-sm:p-3">
             {
                 writersData.map((writer,idx)=><Writer key={idx} writer={writer}></Writer>)
             }

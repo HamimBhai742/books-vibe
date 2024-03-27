@@ -6,18 +6,18 @@ const ReadBookPage = ({ readBook }) => {
             <div className='mt-6'>
                 <div className="card lg:card-side border-2 border-[#13131326]">
                     <div className="p-5 rounded-2xl">
-                        <figure className="bg-[#F3F3F3] px-8 py-5 rounded-2xl"><img className="h-[220px] w-[220px]" src={image} alt="Shoes" /></figure>
+                        <div className="bg-[#F3F3F3] lg:px-8 py-3 lg:py-5 rounded-2xl flex justify-center"><img className="lg:w-[220px] lg:h-[230px] h-[150px]" src={image} alt="Shoes" /></div>
                     </div>
                     <div className="card-body font-work-sans space-y-2">
-                        <h2 className="card-title font-Playfai text-2xl font-bold">{bookName}</h2>
+                        <h2 className="card-title font-Playfai text-2xl font-bold max-sm:-mt-10">{bookName}</h2>
                         <p className="text-[#131313CC] font-medium">By : {author}</p>
-                        <div className='flex gap-12'>
-                            <div className='flex items-center font-work-sans font-medium gap-5'>
+                        <div className='flex max-sm:flex-col gap-5 lg:gap-12'>
+                            <div className='flex max-sm:flex-col items-center font-work-sans font-medium gap-3 lg:gap-5'>
                                 <h4 className="text-[#131313] font-bold">Tag</h4>
                                 {/* <h4 className="bg-[#23BE0A0D] text-[#23BE0A] py-1 px-5 rounded-full">#Young Adult</h4>
                                 <h4 >#Identity</h4> */}
                                 {
-                                    tags.map(tag => <h4 tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A] rounded-full py-1 px-5">#{tag}</h4>)
+                                    tags.map((tag,idx) => <h4 key={idx} tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A] max-sm:text-sm rounded-full py-1 px-5">#{tag}</h4>)
                                 }
                             </div>
                             <div className='flex gap-3 items-center text-[#131313CC]'>
@@ -25,8 +25,8 @@ const ReadBookPage = ({ readBook }) => {
                                 <p>Year of Publishing: {yearOfPublishing}</p>
                             </div>
                         </div>
-                        <div>
-                            <div className='flex gap-12 text-[#13131399]'>
+                        <div className="max-sm:mt">
+                            <div className='flex max-sm:flex-col gap-5  lg:gap-12 text-[#13131399]'>
                                 <div className='flex gap-3 items-center'>
                                     <i className="fa-solid fa-user-group"></i>
                                     <p>Publisher: {publisher}</p>

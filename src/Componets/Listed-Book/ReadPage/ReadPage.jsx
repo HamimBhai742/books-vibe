@@ -46,7 +46,7 @@ const ReadPage = () => {
         }
     }, [])
     return (
-        <div>
+        <div className='max-sm:p-3'>
             {
                 readBooks.map((readBook, idx) => <ReadBookPage key={idx} readBook={readBook}></ReadBookPage>)
             }
