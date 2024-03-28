@@ -60,13 +60,13 @@ const Bookdetlais = () => {
     }
 
     return (
-        <div className="max-w-[1170px] mx-auto my-10">
-            <div className="flex gap-5">
+        <div className="max-w-[1170px] mx-auto my-10 max-sm:p-3">
+            <div className="flex max-sm:flex-col gap-5">
                 <div className="bg-[#1313130D] p-5 rounded-2xl">
                     <img src={findBook.image} alt="" />
                 </div>
                 <div className="max-w-[652px] ">
-                    <h2 className="card-title mt-2 font-Playfai text-4xl font-bold">{findBook.bookName}</h2>
+                    <h2 className="card-title mt-2 font-Playfai text-2xl lg:text-4xl font-bold">{findBook.bookName}</h2>
                     <p className="font-medium font-work-sans text-[#131313CC] my-3">By : {findBook.author}</p>
                     <div className="border-t-2 "> </div>
                     <h5 className="my-3 text-xl font-medium text-[#131313CC]">{findBook.category}</h5>
@@ -75,7 +75,7 @@ const Bookdetlais = () => {
                     <div className="flex items-center font-work-sans font-medium gap-5 text-sm my-2">
                         <h4 className="text-[#131313] font-bold">Tag</h4>
                         {
-                            findBook.tags.map(tag => <h4 tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A]  rounded-full py-1 px-2 ">#{tag}</h4>)
+                            findBook.tags.map((tag,idx) => <h4 key={idx} tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A]  rounded-full py-1 px-2 max-sm:text-sm ">#{tag}</h4>)
                         }
                     </div>
                     <div className="border-t-2 "> </div>

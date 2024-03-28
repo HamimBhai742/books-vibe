@@ -12,7 +12,7 @@ const WishlistSave = ({ wis}) => {
                     <div className="card-body font-work-sans space-y-2">
                         <h2 className="card-title font-Playfai text-2xl font-bold max-sm:-mt-10">{bookName}</h2>
                         <p className="text-[#131313CC] font-medium">By : {author}</p>
-                        <div className='flex flex-col gap-5 lg:gap-12'>
+                        <div className='flex max-sm:flex-col gap-5 lg:gap-12'>
                             <div className='flex max-sm:flex-col items-center font-work-sans font-medium gap-3 lg:gap-5'>
                                 <h4 className="text-[#131313] font-bold">Tag</h4>
                                 {/* <h4 className="bg-[#23BE0A0D] text-[#23BE0A] py-1 px-5 rounded-full">#Young Adult</h4>

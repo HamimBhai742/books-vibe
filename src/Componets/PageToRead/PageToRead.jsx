@@ -120,7 +120,7 @@ export default function PageToRead() {
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="bookName" />
                     <YAxis />
-                    <Bar dataKey="yearOfPublishing" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                    <Bar dataKey="totalPages" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
                         {data.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={colors[index % 20]} />
                         ))}
