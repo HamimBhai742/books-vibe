@@ -18,7 +18,7 @@ const WishlistSave = ({ wis}) => {
                                 {/* <h4 className="bg-[#23BE0A0D] text-[#23BE0A] py-1 px-5 rounded-full">#Young Adult</h4>
                                 <h4 >#Identity</h4> */}
                                 {
-                                    tags.map((tag,idx) => <h4 key={idx} tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A] rounded-full py-1 px-5">#{tag}</h4>)
+                                    tags.map((tag,idx) => <h4 key={idx} tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A] rounded-full text-sm font-semibold py-1 px-5">#{tag}</h4>)
                                 }
                             </div>
                             <div className='flex gap-3 items-center text-[#131313CC]'>

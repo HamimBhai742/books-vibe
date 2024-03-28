@@ -19,7 +19,7 @@ const Book = ({ book }) => {
                                 <h4 >Identity</h4> */}
                                <div className="flex items-center font-work-sans font-medium gap-5 text-sm">
                                {
-                                    tags.map(tag => <h4 tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A]  rounded-full py-1 px-2 ">{tag}</h4>)
+                                    tags.map((tag,idx )=> <h4 key={idx} tag={tag} className="bg-[#23BE0A0D] text-[#23BE0A]  rounded-full py-1 px-2 ">{tag}</h4>)
                                 }
                                </div>
                             </div>

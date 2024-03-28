@@ -93,16 +93,6 @@ export default function PageToRead() {
         }
     }, [])
 
-    // readBooks.map(r => {
-    //     setReadBook({
-    //         name: r.bookName,
-    //         uv: r.totalPages,
-    //         pv: r.yearOfPublishing
-    //     });
-    //     console.log(r.bookName);
-    // })
-    // const dataBook=useLoaderData()
-    // console.log(dataBook);
     return (
         <div className='max-w-[1170px] mx-auto mt-5'>
             <ResponsiveContainer width={`100%`} height={500}>
