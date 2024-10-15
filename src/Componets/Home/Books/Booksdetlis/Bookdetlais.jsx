@@ -11,15 +11,19 @@ const Bookdetlais = () => {
     alert("This feture coming soon");
   };
 
-  const handelAddToCartBtn = () => {
-    alert("This feture coming soon");
+  const handelAddToCartBtn = (id) => {
+    const existingCart = JSON.parse(localStorage.getItem("bookData")) || [];
+    existingCart.push(bookData);
+    localStorage.setItem("bookData", JSON.stringify(existingCart));
+    toast.success("Book added to cart successfully");
   };
+
   return (
     <div className="max-w-[1170px] mx-auto my-10 max-sm:p-3">
       <div className="flex max-sm:flex-col gap-5">
         <div className="bg-[#1313130D] p-5 rounded-2xl">
           <img
-            className="w-[550px] h-[500px]"
+            className="w-[550px] h-[550px]"
             src={bookData?.imageLink}
             alt=""
           />
@@ -80,14 +84,14 @@ const Bookdetlais = () => {
           <div className="font-semibold text-lg font-work-sans flex justify-between mt-5">
             <button
               disabled={!bookData?.isAvailable}
-              onClick={handelBuyNowBtn}
+              onClick={() => handelBuyNowBtn(bookData?.id)}
               className="border-[1px] border-[#1313134D] h-12 w-[110px] text-[#131313] rounded-xl"
             >
               Buy Now
             </button>
             <button
               disabled={!bookData?.isAvailable}
-              onClick={handelAddToCartBtn}
+              onClick={() => handelAddToCartBtn(bookData?.id)}
               className="bg-[#50B1C9] text-white w-[140px] rounded-xl h-12"
             >
               Add To Cart

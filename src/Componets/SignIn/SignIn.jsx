@@ -34,7 +34,7 @@ const SignIn = () => {
     }
   };
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen font-work-sans">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
         <Link
           to="/"
@@ -46,7 +46,7 @@ const SignIn = () => {
           Back
         </Link>
         <div className="mb-8 text-center">
-          <h1 className="my-3 text-4xl font-bold">Sign In</h1>
+          <h1 className="my-3 text-4xl font-bold font-Playfai">Sign In</h1>
           <p className="text-sm text-gray-400">
             Sign in to access your account
           </p>
@@ -89,7 +89,7 @@ const SignIn = () => {
 
           <div>
             <button
-                disabled={loading}
+              disabled={loading}
               type="submit"
               className="bg-teal-500 w-full rounded-md py-3 text-white"
             >

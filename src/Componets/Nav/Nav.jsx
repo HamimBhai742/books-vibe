@@ -55,7 +55,7 @@ const Nav = () => {
             >
               <NavLink to={"/"}>Home</NavLink>
               <Link to={"/dashboard"}>Dashboard</Link>
-              <NavLink to={"/writers"}>Writers</NavLink>
+              <NavLink to={"/dashboard/my-cart"}>My Cart </NavLink>
               <NavLink to={"/about"}>About</NavLink>
             </ul>
           </div>

@@ -56,7 +56,7 @@ const SignUp = () => {
       }
     };
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen font-work-sans">
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900">
         <Link
           to="/"
@@ -68,7 +68,7 @@ const SignUp = () => {
           Back
         </Link>
         <div className="mb-8 text-center">
-          <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
+          <h1 className="my-3 text-4xl font-bold font-Playfai">Sign Up</h1>
           <p className="text-sm text-gray-400">Welcome to StayInn</p>
         </div>
         <form
@@ -127,7 +127,7 @@ const SignUp = () => {
 
           <div>
             <button
-                disabled={loading}
+              disabled={loading}
               type="submit"
               className="bg-teal-500 w-full rounded-md py-3 text-white"
             >
@@ -148,7 +148,7 @@ const SignUp = () => {
         </div>
         <button
           //   disabled={loading}
-            onClick={handelGoogleLogin}
+          onClick={handelGoogleLogin}
           className="flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer"
         >
           <FcGoogle size={32} />

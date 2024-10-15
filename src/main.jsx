@@ -18,6 +18,7 @@ import SignUp from "./Componets/SignUp/SignUp";
 import SignIn from "./Componets/SignIn/SignIn";
 import AuthProvider from "./Provider/AuthProvider";
 import EditBooks from "./Componets/MyBookas/EditBooks";
+import MyCart from "./Componets/MyCart/MyCart";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/edit-books/:id",
         element: <EditBooks></EditBooks>,
+      },
+      {
+        path: "/dashboard/my-cart",
+        element: <MyCart></MyCart>,
       },
     ],
   },

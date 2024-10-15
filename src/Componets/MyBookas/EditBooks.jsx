@@ -77,7 +77,7 @@ const EditBooks = () => {
   return (
     <section className="p-6 bg-teal-100 max-w-[1170px] mx-auto font-work-sans shadow-md rounded-lg">
       {/* <form className="flex justify-center"> */}
-      <h3 className="text-center font-bold text-3xl mb-5 text-teal-600">
+      <h3 className="text-center font-bold text-3xl mb-5 text-teal-600 font-Playfai">
         Update Book
       </h3>
       <form onSubmit={handelEditBtn}>
@@ -113,7 +113,7 @@ const EditBooks = () => {
             </label>
             <input
               type="file"
-            //   defaultValue={imageLink}
+              //   defaultValue={imageLink}
               name="imageLink"
               className="file-input w-full rounded-md h-10"
             />

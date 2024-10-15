@@ -52,7 +52,7 @@ const AddComponents = () => {
   };
   return (
     <section className="p-6 bg-teal-100 max-w-[1170px] mx-auto font-work-sans shadow-md rounded-lg">
-      <h3 className="text-center font-bold text-3xl mb-5 text-teal-600">
+      <h3 className="text-center font-bold text-3xl mb-5 text-teal-600 font-Playfai">
         Add Book
       </h3>
       <form onSubmit={handelBookAddBtn}>
