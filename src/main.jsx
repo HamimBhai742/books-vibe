@@ -1,81 +1,89 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import Error from './Componets/Error/Error';
-import ListedBook from './Componets/Listed-Book/ListedBook';
-import PageToRead from './Componets/PageToRead/PageToRead';
-import { Root } from 'postcss';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Error from "./Componets/Error/Error";
 
+import Home from "./Componets/Home/Home";
 
-
-import Home from './Componets/Home/Home';
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import Nav from './Componets/Nav/Nav';
-import ReadPage from './Componets/Listed-Book/ReadPage/ReadPage';
-import WishlistBooks from './Componets/Listed-Book/whitlist/Whitlist';
-import Bookdetlais from './Componets/Home/Books/Booksdetlis/Bookdetlais';
-import Writers from './Componets/Writers/Writers';
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Nav from "./Componets/Nav/Nav";
+import Bookdetlais from "./Componets/Home/Books/Booksdetlis/Bookdetlais";
+import AddComponents from "./Componets/AddComponents/AddComponents";
+import Dashboard from "./Componets/Dashboard/Dashboard";
+import MyBooks from "./Componets/MyBookas/MyBooks";
+import Root from "./Componets/Root/Root";
+import { Toaster } from "react-hot-toast";
+import Roots from "./Root1/Root";
+import SignUp from "./Componets/SignUp/SignUp";
+import SignIn from "./Componets/SignIn/SignIn";
+import AuthProvider from "./Provider/AuthProvider";
+import EditBooks from "./Componets/MyBookas/EditBooks";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <Nav></Nav>,
     errorElement: <Error></Error>,
     children: [
       {
-        path: '/',
-        loader: () => fetch('/Books.json'),
-        element: <Home></Home>
+        path: "/",
+        loader: () => fetch("/Books.json"),
+        element: <Home></Home>,
       },
       {
-        path: '/listedBook',
-        element: <ListedBook></ListedBook>,
-        children: [{
-          index: true,
-          // path: 'readPage',
-          loader: () => fetch('/Books.json'),
-          element: <ReadPage></ReadPage>
-        },
-        {
-          index: true,
-          path: 'readPage',
-          loader: () => fetch('/Books.json'),
-          element: <ReadPage></ReadPage>
-        },
-        {
-          path: 'wishlistBooksPage',
-          loader: () => fetch('/Books.json'),
-          element: <WishlistBooks></WishlistBooks>
-        }
-        ]
-
+        path: "/book/:bookId",
+        // loader: () => fetch(books),
+        element: <Bookdetlais></Bookdetlais>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <Root></Root>,
+    children: [
+      {
+        path: "/dashboard/static",
+        element: <Dashboard></Dashboard>,
       },
       {
-        path: '/pageToRead',
-        loader: () => fetch('/Books.json'),
-        element: <PageToRead></PageToRead>
+        path: "/dashboard/my-books",
+        element: <MyBooks></MyBooks>,
       },
       {
-        path: '/book/:bookId',
-        loader: () => fetch(`/Books.json`),
-        element: <Bookdetlais></Bookdetlais>
+        path: "/dashboard/add-books",
+        element: <AddComponents></AddComponents>,
       },
       {
-        path: '/writers',
-        loader: ()=>fetch('/Writers.json'),
-        element:<Writers></Writers>
-      }
-    ]
+        path: "/dashboard/edit-books/:id",
+        element: <EditBooks></EditBooks>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <Roots></Roots>,
+    children: [
+      // {
+      //   path:"/login",
+      //   element:
+      // },
+      {
+        path: "/sign-up",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "/sign-in",
+        element: <SignIn></SignIn>,
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <Toaster />
+    </AuthProvider>
+  </React.StrictMode>
+);

@@ -37,3 +37,9 @@ ul>li>.active {
     border-radius: 8px;
     padding: 8px;
 }
+
+#sidebar .active{
+       color: #23BE0A;
+       border-bottom:2px solid #23BE0A ;
+       font-weight: 600;
+}
