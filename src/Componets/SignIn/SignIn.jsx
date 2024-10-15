@@ -11,16 +11,13 @@ const SignIn = () => {
   const { signIn, setLoading, loading, signInWithGoogle } = useAuth();
   const navigate = useNavigate();
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       setLoading(true);
       const { email, password } = data;
-      console.log(email, password);
       const logUser = await signIn(email, password);
       navigate("/");
       toast.success("Signin Successfull");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
       setLoading(false);
     }
@@ -33,7 +30,6 @@ const SignIn = () => {
       navigate("/");
       toast.success("Signin Successfull With Google");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
     }
   };
